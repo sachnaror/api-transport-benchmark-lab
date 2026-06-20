@@ -210,3 +210,19 @@ Client -> JSON over HTTP -> API -> PostgreSQL JSONB storage
 ```
 
 So JSONB can help with database queries, but it does not remove API serialization or deserialization cost.
+
+
+
+## 📩 Contact
+
+| Name              | Details                             |
+|-------------------|-------------------------------------|
+| **👨‍💻 Developer**  | Sachin Arora                      |
+| **📧 Email**      | [sachnaror@gmail.com](mailto:sacinaror@gmail.com) |
+| **📍 Location**   | Noida, India                       |
+| **📂 GitHub**     | [Link](https://github.com/sachnaror) |
+| **🌐 Youtube**    | [Link](https://www.youtube.com/@sachnaror4841/videos) |
+| **🌐 Blog**       | [Link](https://medium.com/@schnaror) |
+| **🌐 Website**    | [Link](https://about.me/sachin-arora) |
+| **🌐 Twitter**    | [Link](https://twitter.com/sachinhep) |
+| **📱 Phone**      | [+91 9560330483](tel:+919560330483) |
