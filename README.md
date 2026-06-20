@@ -20,6 +20,15 @@ The goal is simple: see the tradeoff visually instead of only talking about it t
   style="max-width: 800px; max-height: 560px; width: 100%; height: auto; object-fit: contain;"
 />
 
+<a href="https://www.youtube.com/watch?v=srmGjOeirX4" target="_blank" rel="noopener noreferrer">
+  <img
+    src="https://img.youtube.com/vi/srmGjOeirX4/maxresdefault.jpg"
+    alt="Watch the YouTube explainer for API Transport Benchmark Lab"
+    align="left"
+    style="max-width: 800px; max-height: 560px; width: 100%; aspect-ratio: 16 / 9; height: auto; object-fit: contain;"
+  />
+</a>
+
 <br clear="left" />
 
 ## What The Formats Are
