@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>API Transport Benchmark Lab</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Live serialization lab</p>
+          <h1>API Transport Benchmark Lab</h1>
+          <p class="lede">
+            Generate heavy payloads and compare JSON REST against compact binary
+            transport profiles in real browser timings.
+          </p>
+        </div>
+        <div class="heroStats" aria-label="Current benchmark summary">
+          <div>
+            <span id="summaryWinner">Run benchmark</span>
+            <small>Fastest profile</small>
+          </div>
+          <div>
+            <span id="summaryPayload">0 KB</span>
+            <small>JSON payload</small>
+          </div>
+          <div>
+            <span id="summaryRecords">1</span>
+            <small>Records</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <aside class="controls" aria-label="Payload generator controls">
+          <div class="panelTitle">
+            <h2>Payload Generator</h2>
+            <button id="runBtn" class="primaryBtn" type="button">Run Benchmark</button>
+          </div>
+
+          <label>
+            <span>Attributes per record</span>
+            <input id="fieldCount" type="range" min="20" max="1000" step="20" value="100" />
+            <output id="fieldCountOut">100</output>
+          </label>
+
+          <label>
+            <span>Nested depth</span>
+            <input id="nestedDepth" type="range" min="1" max="5" step="1" value="2" />
+            <output id="nestedDepthOut">2</output>
+          </label>
+
+          <label>
+            <span>Array size</span>
+            <input id="arraySize" type="range" min="1" max="50" step="1" value="8" />
+            <output id="arraySizeOut">8</output>
+          </label>
+
+          <label>
+            <span>String size</span>
+            <input id="stringSize" type="range" min="10" max="1000" step="10" value="80" />
+            <output id="stringSizeOut">80 chars</output>
+          </label>
+
+          <label>
+            <span>Records</span>
+            <input id="recordCount" type="range" min="1" max="1000" step="1" value="25" />
+            <output id="recordCountOut">25</output>
+          </label>
+
+          <label>
+            <span>Requests per run</span>
+            <input id="requestCount" type="range" min="1" max="200" step="1" value="25" />
+            <output id="requestCountOut">25</output>
+          </label>
+
+          <div class="presetRow">
+            <button class="presetBtn" type="button" data-preset="small">20 fields</button>
+            <button class="presetBtn" type="button" data-preset="medium">400 fields</button>
+            <button class="presetBtn" type="button" data-preset="large">1000 fields</button>
+          </div>
+        </aside>
+
+        <section class="dashboard" aria-label="Benchmark dashboard">
+          <div class="toolbar">
+            <div>
+              <h2>Benchmark Dashboard</h2>
+              <p id="runMeta">No benchmark has run yet.</p>
+            </div>
+            <div class="metricPills">
+              <span id="payloadShape">100 fields</span>
+              <span id="payloadBytes">0 KB</span>
+            </div>
+          </div>
+
+          <div class="chartGrid">
+            <article class="chartPanel">
+              <h3>Total Latency</h3>
+              <div id="latencyChart" class="bars"></div>
+            </article>
+            <article class="chartPanel">
+              <h3>Payload Size</h3>
+              <div id="sizeChart" class="bars"></div>
+            </article>
+            <article class="chartPanel">
+              <h3>Encode vs Decode</h3>
+              <div id="phaseChart" class="stackedBars"></div>
+            </article>
+            <article class="chartPanel">
+              <h3>CPU Work Estimate</h3>
+              <div id="cpuChart" class="bars"></div>
+            </article>
+          </div>
+
+          <div class="tableWrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Transport profile</th>
+                  <th>Total</th>
+                  <th>Serialize</th>
+                  <th>Network</th>
+                  <th>Deserialize</th>
+                  <th>Payload</th>
+                  <th>Requests/sec</th>
+                </tr>
+              </thead>
+              <tbody id="resultsBody">
+                <tr>
+                  <td colspan="7">Run a benchmark to see live numbers.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <section class="details">
+        <article class="flowPanel">
+          <h2>Transport Flow</h2>
+          <div id="flow" class="flow"></div>
+        </article>
+
+        <article class="payloadPanel">
+          <div class="panelTitle">
+            <h2>Payload Preview</h2>
+            <button id="copyBtn" class="ghostBtn" type="button">Copy JSON</button>
+          </div>
+          <pre id="payloadPreview">{}</pre>
+        </article>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
